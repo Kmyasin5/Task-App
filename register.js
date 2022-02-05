@@ -1,8 +1,8 @@
 //temporary set values
-document.querySelector("#name").value = "Yasin";
-document.querySelector("#email").value = "";
-document.querySelector("#password").value;
-document.querySelector("#re_password").value;
+// document.querySelector("#name").value = "";
+// document.querySelector("#email").value = "";
+// document.querySelector("#password").value;
+// document.querySelector("#re_password").value;
 
 //document.querySelector("#accept");
 
@@ -86,24 +86,4 @@ function showSuccessMessage(message) {
 	document.getElementById(
 		"Notification"
 	).innerHTML = `<font color = 'green'>${message}</font>`;
-}
-
-// Here, we creating the login page
-
-function login() {
-	const name = document.querySelector("#name").value;
-	const password = document.querySelector("#password").value;
-
-	if (name == null || name.trim() == "") {
-		document.getElementById("loginError").innerHTML = "Enter the valid name";
-	}
-
-	if (password == null || password.trim() == "") {
-		document.getElementById("loginError").innerHTML =
-			"Enter the Valid Password";
-	}
-
-	if (name != null && password != "") {
-		alert("Login Successfully");
-	}
 }

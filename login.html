@@ -10,7 +10,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="register.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 </head>
 
 
@@ -27,16 +27,16 @@
         <form name="logForm" onsubmit="login()">
 
             <p>Username</p>
-            <input type="text" name="logName" placeholder="Enter the UserName" pattern="(?=.*[a-z]).{8,}"
+            <input type="text" name="logName" id="logName" placeholder="Enter the UserName" pattern="(?=.*[a-z]).{8,}"
                 title="Enter the valid username, Must contain atleast 8 values" required>
 
             <p>Password</p>
-            <input type="password" name="logPassword" placeholder="Enter the Password"
+            <input type="password" name="logPassword" id="logPassword" placeholder="Enter the Password"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                 required>
 
-            <div id="loginError"></div>
+            <div id="Notification"></div>
             <input type="submit" name="" value="Login">
 
             <br><br>
@@ -49,6 +49,9 @@
     <script>
         $("#header").load("_header.html");
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="login.js"></script>
 
 </body>
 
