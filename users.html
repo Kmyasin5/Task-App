@@ -5,31 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Users</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <div id="users-tbl">
-        <!--
+
+    <header id="header">
+        <!--header content -->
+    </header>
+
+    <main class="logPage container text-center pt-md-5">
+
+        <div id="users-tbl">
+            <!--
     [
     {name:"naresh"},
     {"name:"yasin"}
     ]
 -->
-    </div>
+        </div>
 
-
+    </main>
     <script>
 
-        function loadUsers() {
-            const users = JSON.parse(localStorage.getItem("USERS")) ?? [];
-            console.table(users);
+        $("#header").load("_header.html");
 
-            document.querySelector("#users-tbl").innerHTML = JSON.stringify(users);
-        }
-
-        loadUsers();
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="users.js"></script>
 </body>
+
+<footer>
+
+
+</footer>
 
 </html>

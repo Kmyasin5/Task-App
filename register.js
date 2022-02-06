@@ -13,7 +13,7 @@ function register() {
 	const email = document.querySelector("#email").value;
 	const password = document.querySelector("#password").value;
 	const re_password = document.querySelector("#re_password").value;
-	const accept = document.querySelector("#tc");
+	const tc = document.querySelector("#tc");
 
 	console.log(
 		"name = " + name + ", email = " + email + ", password " + password
