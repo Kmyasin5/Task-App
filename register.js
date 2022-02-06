@@ -64,8 +64,9 @@ function register() {
 		toastr.success("Successfully Registered");
 	}
 
+	const users = JSON.parse(localStorage.getItem("USERS")) ?? [];
 	const userObj = {
-		id: 1,
+		id: users.length + 1,
 		name: name,
 		email: email,
 		password: password,
@@ -73,7 +74,9 @@ function register() {
 	};
 
 	console.log(userObj);
-	localStorage.setItem("User_Details", JSON.stringify(userObj));
+
+	users.push(userObj);
+	localStorage.setItem("USERS", JSON.stringify(users));
 }
 
 function showErrorMessage(message) {
