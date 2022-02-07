@@ -58,12 +58,7 @@ function register() {
 		return false;
 	}
 
-	if (name != "" && email != "" && password == re_password && tc.checked) {
-		// document.getElementById("Registered").innerHTML = "Registration Success";
-		showSuccessMessage("Registration Success");
-		toastr.success("Successfully Registered");
-	}
-
+	const createdDate = new Date().toJSON();
 	const users = JSON.parse(localStorage.getItem("USERS")) ?? [];
 	const userObj = {
 		id: users.length + 1,
@@ -71,12 +66,19 @@ function register() {
 		email: email,
 		password: password,
 		re_password: re_password,
+		createdDate: createdDate,
+		role: "USER",
+		active: 0,
 	};
 
 	console.log(userObj);
 
 	users.push(userObj);
 	localStorage.setItem("USERS", JSON.stringify(users));
+	toastr.success("Successfully Registered");
+	setTimeout(function () {
+		window.location.href = "login.html";
+	}, 3000);
 }
 
 function showErrorMessage(message) {

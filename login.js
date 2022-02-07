@@ -17,32 +17,35 @@ function login() {
 		return false;
 	}
 
-	if (logName != "" && logPassword != "") {
-		showSuccessMessage("Login Successfully");
-		toastr.success("Successfully Logged in");
+	// search user details from the list of users and store the searched result in localStorage
+	const users = JSON.parse(localStorage.getItem("USERS")) ?? [];
+	let searchUser = null;
+	for (let userObj of users) {
+		if (userObj.email == logName && userObj.password == logPassword) {
+			searchUser = userObj; // matched user details -> store it in a variable
+			break;
+		}
+	}
+	if (searchUser == null) {
+		toastr.error("Invalid login credentials");
 	} else {
-		showErrorMessage("Login Failed");
-		toastr.failure("Login failed");
+		console.log(searchUser);
+		localStorage.setItem("LOGGED_IN_USER", JSON.stringify(searchUser));
+		toastr.success("Loggedin Successfull");
+		setTimeout(function () {
+			window.location.href = "addTask.html";
+		}, 3000);
 	}
+}
 
-	const userLogObj = {
-		id: 1,
-		logName: logName,
-		logPassword: logPassword,
-	};
+function showErrorMessage(message) {
+	document.getElementById(
+		"Notification"
+	).innerHTML = `<font color = 'red'>${message}</font>`;
+}
 
-	console.log(userLogObj);
-	localStorage.setItem("User_Details", JSON.stringify(userLogObj));
-
-	function showErrorMessage(message) {
-		document.getElementById(
-			"Notification"
-		).innerHTML = `<font color = 'red'>${message}</font>`;
-	}
-
-	function showSuccessMessage(message) {
-		document.getElementById(
-			"Notification"
-		).innerHTML = `<font color = 'green'>${message}</font>`;
-	}
+function showSuccessMessage(message) {
+	document.getElementById(
+		"Notification"
+	).innerHTML = `<font color = 'green'>${message}</font>`;
 }

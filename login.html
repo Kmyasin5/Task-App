@@ -12,10 +12,13 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
 
 
-<body>
+<body class="logBody">
 
     <header id="header">
         <!--header content -->
@@ -24,6 +27,8 @@
     <main class="box container text-center pt-md-5">
 
         <h1 class="log-page-title">Login Page</h1>
+
+        <br>
 
         <div class="row">
             <div class="col-4"></div>
@@ -40,10 +45,10 @@
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="UserName" class="col-sm-6 col-form-label">UserName</label>
+                    <label for="UserName" class="col-sm-6 col-form-label">Password</label>
                     <div class="col-sm-6">
-                        <input type="password" name="logPassword" id="logPassword" placeholder="Enter the Password"
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        <input type="password" class="form-control" name="logPassword" id="logPassword"
+                            placeholder="Enter the Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                             required>
                     </div>

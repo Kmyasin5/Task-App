@@ -4,8 +4,23 @@ main {
 
 .page-title {
 	color: cadetblue;
+	font-size: 50px;
 }
 
 .log-page-title {
 	color: cadetblue;
+}
+
+.userColor {
+	color: cadetblue;
+}
+
+.regBody {
+	background-color: rgb(196, 202, 202);
+	font-family: "Raleway", sans-serif;
+}
+
+.logBody {
+	background-color: rgb(196, 202, 202);
+	font-family: "Raleway", sans-serif;
 }
