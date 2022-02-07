@@ -34,6 +34,8 @@ function loadUsers() {
 			class="btn btn-danger btn-sm"
 			onclick="deleteUser(${i})"> DELETE </button>`;
 
+		//have doubts on the below one(content)
+
 		content += `</td >
                 </tr>
                 `;
