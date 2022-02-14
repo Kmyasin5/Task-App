@@ -1,6 +1,6 @@
 # Ticket-App
 
-* https://todoapp-yasin.netlify.app/
+* https://ticketapp-yasin.netlify.app/
 
 
 #### Features
