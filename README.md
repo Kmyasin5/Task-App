@@ -1,4 +1,4 @@
-# Task-App
+# Ticket-App
 
 * https://todoapp-yasin.netlify.app/
 
@@ -7,14 +7,14 @@
 
 1. Register User (COMPLETED)
 2. Login User
-3. Add Task
-4. List Task
-5. Add created date in Task
-6. Edit Task
-7. Add user detialsin task
-8. Disable edit for completed task
-9. Delete Task
+3. Add Ticket
+4. List Ticket
+5. Add created date in Ticket
+6. Edit Ticket
+7. Add user detials in ticket
+8. Closed edit for completed ticket
+9. Delete ticket
 10. Add priority
-11. Show task priority in list Task
+11. Show task priority in list ticket
 12. Change task priority
-13. Show task priority in list Task
+13. Show task priority in list ticket
