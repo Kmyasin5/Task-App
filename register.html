@@ -54,7 +54,6 @@
                 </div>
 
 
-
                 <div class="mb-3 row">
                     <label for="password" class="col-sm-6 col-form-label">Password</label>
                     <div class="col-sm-6">
@@ -87,7 +86,6 @@
                 <div>
                     <input type="submit" name="" value="Submit">
                     <input type="reset" name="" value=" Reset ">
-
                 </div>
 
                 <div id="Registered"></div>
@@ -108,6 +106,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="register.js"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem("LOGGED_IN_USER"); // Here. we removing the user who loggedin, they will remove from the loggedin user list whenever they logout.
+            window.location.href = "index.html";
+        }
+    </script>
 </body>
 <footer>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
+    <title>Tickets</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
-<body class="userBody">
+<body class="ticketBody">
 
     <header id="header">
         <!--header content -->
@@ -21,31 +21,33 @@
 
     <main class="userPage container text-center pt-md-5">
 
-        <!-- <div id="users-tbl"> -->
-        <!--
-    [
-    {name:"naresh"},
-    {"name:"yasin"}
-    ]
--->
-
         <section id="users-tbl">
-            <h3 class="userColor">Registered Users List</h3>
+            <h3 class="userColor">Tickets List</h3>
+
+
+
+            <div class="row">
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <a href="addTicket.html" class="btn btn-outline-primary">Create Ticket</a>
+                </div>
+            </div>
 
             <br>
-
             <table class="table table-bordered">
                 <thead>
                     <tr class="border-primary border-dark">
                         <th>Sno</th>
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th>Ticket Name</th>
+                        <th>Priority</th>
                         <th>Last Updated On</th>
-                        <th>Role</th>
+                        <th>Created By</th>
                         <th>Status</th>
+                        <th>Active</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
-                <tbody id="users-table">
+                <tbody id="tickets-table">
                 </tbody>
             </table>
 
@@ -59,7 +61,7 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <script src="users.js"></script>
+    <script src="ticket.js"></script>
     <script>
         function logout() {
             localStorage.removeItem("LOGGED_IN_USER"); // Here. we removing the user who loggedin, they will remove from the loggedin user list whenever they logout.

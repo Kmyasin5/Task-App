@@ -33,7 +33,7 @@ function login() {
 		localStorage.setItem("LOGGED_IN_USER", JSON.stringify(searchUser));
 		toastr.success("Loggedin Successfull");
 		setTimeout(function () {
-			window.location.href = "addTask.html";
+			window.location.href = "index.html";
 		}, 3000);
 	}
 }

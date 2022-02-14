@@ -3,12 +3,12 @@
 // document.querySelector("#email").value = "";
 // document.querySelector("#password").value;
 // document.querySelector("#re_password").value;
-
 //document.querySelector("#accept");
 
 function register() {
 	event.preventDefault();
 
+	//1. get form values
 	const name = document.querySelector("#name").value;
 	const email = document.querySelector("#email").value;
 	const password = document.querySelector("#password").value;
@@ -19,7 +19,7 @@ function register() {
 		"name = " + name + ", email = " + email + ", password " + password
 	);
 
-	//Checking here the values are correct or not
+	//2. Validate form values
 
 	if (name == null || name.trim() == "") {
 		//document.getElementById("Notification").innerHTML = "Enter the valid name";
@@ -54,10 +54,13 @@ function register() {
 	}
 
 	if (!tc.checked) {
-		showErrorMessage("Accept the checkBox");
+		toastr.error("Accept the Terms and Conditions");
 		return false;
 	}
 
+	// Validation - end
+
+	// 3. Send form details to REST API
 	const createdDate = new Date().toJSON();
 	const users = JSON.parse(localStorage.getItem("USERS")) ?? [];
 	const userObj = {
@@ -75,7 +78,11 @@ function register() {
 
 	users.push(userObj);
 	localStorage.setItem("USERS", JSON.stringify(users));
+
+	// Step 4: Show Notification - Success/Failure
 	toastr.success("Successfully Registered");
+
+	//Step 5: Redirect page
 	setTimeout(function () {
 		window.location.href = "login.html";
 	}, 3000);
@@ -92,3 +99,16 @@ function showSuccessMessage(message) {
 		"Notification"
 	).innerHTML = `<font color = 'green'>${message}</font>`;
 }
+
+function isAuthorised() {
+	const userObj = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+	console.log("LoggedIn User Details", userObj);
+	if (userObj == null) {
+		//	toastr.error("User must be loggedin");
+		alert(
+			"User must be loggedin to access this page: Redirecting to login page"
+		);
+		window.location.href = "login.html";
+	}
+}
+isAuthorised();
